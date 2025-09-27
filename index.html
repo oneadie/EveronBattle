@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everon Battle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="icon.jpg" alt="Streamer Icon" id="streamer-icon">
+        <h1>EVERON BATTLE</h1>
+    </header>
+    <main>
+        <h1 id="vs-title">EVERON VS SEYKA</h1>
+        <div class="battle-container">
+            <section id="everon-section" class="battle-section">
+                <h2>Everon</h2>
+                <button class="add-slot" data-section="everon">Добавить слот</button>
+                <table class="battle-table" id="everon-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Бонус</th>
+                            <th>Цена</th>
+                            <th>Дала</th>
+                            <th>x</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="total-received">Всего получено: <span class="total-value" id="everon-total">0</span></div>
+            </section>
+            <section id="seyka-section" class="battle-section">
+                <h2>Seyka</h2>
+                <button class="add-slot" data-section="seyka">Добавить слот</button>
+                <table class="battle-table" id="seyka-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Бонус</th>
+                            <th>Цена</th>
+                            <th>Дала</th>
+                            <th>x</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="total-received">Всего получено: <span class="total-value" id="seyka-total">0</span></div>
+            </section>
+        </div>
+        <div id="winner-announce">
+            <p>Победитель: <span id="winner-name">Ожидается</span></p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
