@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const seykaTotalSpan = document.querySelector('#seyka-total');
     const winnerNameSpan = document.querySelector('#winner-name');
     const addSlotButtons = document.querySelectorAll('.add-slot');
+    const resetButton = document.querySelector('#reset-all');
 
     let everonCount = 0;
     let seykaCount = 0;
@@ -38,6 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
             payout: row.cells[3].textContent
         }));
         localStorage.setItem(section === 'everon' ? 'everonData' : 'seykaData', JSON.stringify(data));
+    }
+
+    // Reset all data
+    function resetAll() {
+        everonTableBody.innerHTML = '';
+        seykaTableBody.innerHTML = '';
+        everonCount = 0;
+        seykaCount = 0;
+        everonTotal = 0;
+        seykaTotal = 0;
+        everonTotalSpan.textContent = '0.00';
+        seykaTotalSpan.textContent = '0.00';
+        winnerNameSpan.textContent = 'Ожидается';
+        localStorage.removeItem('everonData');
+        localStorage.removeItem('seykaData');
     }
 
     function updateWinner() {
@@ -130,6 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
             saveData(section);
         });
     });
+
+    // Add reset button event listener
+    if (resetButton) {
+        resetButton.addEventListener('click', resetAll);
+    }
 
     // Load data on page load
     loadData();
